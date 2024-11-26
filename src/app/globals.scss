@@ -1,0 +1,64 @@
+@use "../style/variable" as var;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body, button, input, select, textarea {
+    font-synthesis: none;
+    -moz-font-feature-settings: "kern";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: ltr;
+    text-align: left;
+}
+html {
+    font-size: 2.5641vw;
+    @media (min-width: var.$xs) {
+      font-size: 1.42083vw;
+    }
+    @media (min-width: var.$sm) {
+      font-size: 0.82083vw;
+    }
+    @media (min-width: var.$md) {
+      font-size: 0.72083vw;
+    }
+    @media (min-width: var.$lg) {
+      font-size: 0.52083vw;
+    }
+    @media (min-width: var.$xl) {
+      font-size: 0.61534vw;
+    }
+    @media (min-width: var.$xxl) {
+      font-size: 0.5208338vw;
+    }
+  }
+.container {
+  width: 100%;
+  @media (min-width: var.$xs) {
+    max-width: var.$container-width-xs;
+  }
+
+  @media (min-width: var.$sm) {
+    max-width: var.$container-width-sm;
+  }
+
+  @media (min-width: var.$md) {
+    max-width: var.$container-width-md;
+  }
+
+  @media (min-width: var.$lg) {
+    max-width: var.$container-width-lg;
+  }
+
+  @media (min-width: var.$xl) {
+    max-width: var.$container-width-xl;
+  }
+
+  @media (min-width: var.$xxl) {
+    max-width: var.$container-width-xxl;
+  }
+}
+main{
+    min-height: 100vh;
+}
