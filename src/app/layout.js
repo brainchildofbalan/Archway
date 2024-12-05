@@ -1,5 +1,6 @@
 
 import "./globals.scss";
+import 'swiper/css';
 import CommonLayout from "@/components/CommonLayout";
 import { Plus_Jakarta_Sans } from 'next/font/google'
  
