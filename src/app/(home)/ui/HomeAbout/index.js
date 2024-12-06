@@ -1,3 +1,4 @@
+import Icon from "@/components/Icon";
 import Link from "next/link";
 import React from "react";
 
@@ -14,8 +15,14 @@ const HomeAbout = () => {
               resonate with the spirit of those who inhabit them.`}
             </p>
             <div className="w-full relative">
-              <Link href={"/"} className="text-[5rem] font-semibold">
-                About Us
+              <Link
+                href={"/"}
+                className="text-[5rem] font-semibold flex items-center space-x-[1.2rem]"
+              >
+                <span className="leading-none flex items-center">About Us</span>
+                <span className=" flex items-center">
+                  <Icon icon="arrow-1" size={"6rem"} color="#000" />{" "}
+                </span>
               </Link>
             </div>
           </div>

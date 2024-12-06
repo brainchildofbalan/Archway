@@ -14,51 +14,62 @@ body, button, input, select, textarea {
 }
 html {
     font-size: 2.5641vw;
-    @media (min-width: var.$xs) {
-      font-size: 1.42083vw;
-    }
+    // @media (min-width: var.$xs) {
+    //   font-size: 1.42083vw;
+    // }
+    // @media (min-width: var.$sm) {
+    //   font-size: 0.82083vw;
+    // }
+    // @media (min-width: var.$md) {
+    //   font-size: 0.72083vw;
+    // }
+    // @media (min-width: var.$lg) {
+    //   font-size: 0.52083vw;
+    // }
+    // @media (min-width: var.$xl) {
+    //   font-size: 0.61534vw;
+    // }
+    // @media (min-width: var.$xxl) {
+    //   font-size: 0.5208338vw;
+    // }
+    //repeat
     @media (min-width: var.$sm) {
-      font-size: 0.82083vw;
-    }
-    @media (min-width: var.$md) {
-      font-size: 0.72083vw;
-    }
-    @media (min-width: var.$lg) {
-      font-size: 0.52083vw;
-    }
-    @media (min-width: var.$xl) {
-      font-size: 0.61534vw;
-    }
-    @media (min-width: var.$xxl) {
       font-size: 0.5208338vw;
     }
   }
 .container {
   width: 100%;
-  @media (min-width: var.$xs) {
-    max-width: var.$container-width-xs;
-  }
+  padding-left: 8.33%;
+  padding-right: 8.33%;
+  max-width: 100% !important;
+  // @media (min-width: var.$xs) {
+  //   max-width: var.$container-width-xs;
+  // }
 
-  @media (min-width: var.$sm) {
-    max-width: var.$container-width-sm;
-  }
+  // @media (min-width: var.$sm) {
+  //   max-width: var.$container-width-sm;
+  // }
 
-  @media (min-width: var.$md) {
-    max-width: var.$container-width-md;
-  }
+  // @media (min-width: var.$md) {
+  //   max-width: var.$container-width-md;
+  // }
 
-  @media (min-width: var.$lg) {
-    max-width: var.$container-width-lg;
-  }
+  // @media (min-width: var.$lg) {
+  //   max-width: var.$container-width-lg;
+  // }
 
-  @media (min-width: var.$xl) {
-    max-width: var.$container-width-xl;
-  }
+  // @media (min-width: var.$xl) {
+  //   max-width: var.$container-width-xl;
+  // }
 
-  @media (min-width: var.$xxl) {
-    max-width: var.$container-width-xxl;
-  }
+  // @media (min-width: var.$xxl) {
+  //   max-width: var.$container-width-xxl;
+  // }
 }
 main{
     min-height: 100vh;
+}
+
+.font-kern{
+  font-kerning: none;
 }
