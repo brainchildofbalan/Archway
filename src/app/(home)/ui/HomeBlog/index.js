@@ -1,29 +1,56 @@
 "use client";
 import Icon from "@/components/Icon";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
+gsap.config({ force3D : true })
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
+
 const HomeBlog = () => {
+  const containerRef = useRef(null)
+  useGSAP((ctx, ctxSafe) => {
+    const wrapper = ctx.selector('.item-wrapper')
+    const mousemove = ctx.selector('.item-move')
+    const containerWidth = ctx.selector('.container-width')
+    const containerSize = (mousemove[0].clientWidth - containerWidth[0].clientWidth) /2
+    console.log(containerSize);
+    
+
+
+
+    mousemove[0].addEventListener('mousemove', (e) => {
+      console.log(e.clientX - ((mousemove[0].clientWidth) /2));
+      const movingWidth = (e.clientX - (((mousemove[0].clientWidth)) / 2)) * -1 
+      gsap.to(wrapper, {
+        x: movingWidth,
+        duration: 0.4, // Smooth transition
+        ease: "power1.out", // Smoother easing
+        overwrite: "auto", // Prevent animation conflicts
+      });
+      // console.log(wrapper[0].clientWidth);
+    })
+
+    
+  
+  }, { scope : containerRef})
   return (
-    <section className="w-full relative">
+    <section className="w-full relative" ref={containerRef}>
       <div className="container">
-        <div className="w-full relative">
+        <div className="w-full relative container-width">
           <h4 className="text-[15rem] leading-[1.26] font-medium text-center py-[10rem]">
             BLOG
           </h4>
         </div>
-        <div className="w-full relative">
-          <Swiper
-            className="!overflow-visible"
-            slidesPerView={"auto"}
-            spaceBetween={80}
-            centeredSlides
-            loop
+        </div>
+        <div className="w-full relative flex justify-center item-move">
+          <div
+            className="w-auto relative flex item-wrapper will-change-transform"
           >
-            <SwiperSlide className="!w-[47.4rem]">
+            <Link href={'/'} className="!w-[55rem] px-[4rem]">
               <div className="w-full">
                 <div className="w-full aspect-[473/493] relative bg-[#eee] mb-[2rem]">
                   <Image src={"/images/blogs/blog-1.jpg"} alt="blog" fill />
@@ -39,8 +66,8 @@ const HomeBlog = () => {
                   typesetting industry.
                 </p>
               </div>
-            </SwiperSlide>
-            <SwiperSlide className="!w-[47.4rem]">
+            </Link>
+            <Link href={'/'} className="!w-[55rem] px-[4rem]">
               <div className="w-full">
                 <div className="w-full aspect-[473/493] relative bg-[#eee] mb-[2rem]">
                   <Image src={"/images/blogs/blog-2.jpg"} alt="blog" fill />
@@ -56,8 +83,8 @@ const HomeBlog = () => {
                   typesetting industry.
                 </p>
               </div>
-            </SwiperSlide>
-            <SwiperSlide className="!w-[47.4rem]">
+            </Link>
+            <Link href={'/'} className="!w-[55rem] px-[4rem]">
               <div className="w-full">
                 <div className="w-full aspect-[473/493] relative bg-[#eee] mb-[2rem]">
                   <Image src={"/images/blogs/blog-3.jpg"} alt="blog" fill />
@@ -73,8 +100,8 @@ const HomeBlog = () => {
                   typesetting industry.
                 </p>
               </div>
-            </SwiperSlide>
-            <SwiperSlide className="!w-[47.4rem]">
+            </Link>
+            <Link href={'/'} className="!w-[55rem] px-[4rem]">
               <div className="w-full">
                 <div className="w-full aspect-[473/493] relative bg-[#eee] mb-[2rem]">
                   <Image src={"/images/blogs/blog-4.jpg"} alt="blog" fill />
@@ -90,8 +117,8 @@ const HomeBlog = () => {
                   typesetting industry.
                 </p>
               </div>
-            </SwiperSlide>
-            <SwiperSlide className="!w-[47.4rem]">
+            </Link>
+            <Link href={'/'} className="!w-[55rem] px-[4rem]">
               <div className="w-full">
                 <div className="w-full aspect-[473/493] relative bg-[#eee] mb-[2rem]">
                   <Image src={"/images/blogs/blog-5.jpg"} alt="blog" fill />
@@ -107,8 +134,8 @@ const HomeBlog = () => {
                   typesetting industry.
                 </p>
               </div>
-            </SwiperSlide>
-            <SwiperSlide className="!w-[47.4rem]">
+            </Link>
+            <Link href={'/'} className="!w-[55rem] px-[4rem]">
               <div className="w-full">
                 <div className="w-full aspect-[473/493] relative bg-[#eee] mb-[2rem]">
                   <Image src={"/images/blogs/blog-6.jpg"} alt="blog" fill />
@@ -124,8 +151,8 @@ const HomeBlog = () => {
                   typesetting industry.
                 </p>
               </div>
-            </SwiperSlide>
-          </Swiper>
+            </Link>
+          </div>
         </div>
         <div className="w-full flex justify-center pt-[8rem]">
           <Link href={"/"} className="text-[5rem] font-semibold flex items-center space-x-[1.2rem]">
@@ -133,7 +160,6 @@ const HomeBlog = () => {
             <span className=" flex items-center"> <Icon icon="arrow-1" size={'6rem'} color="#000" /> </span>
           </Link>
         </div>
-      </div>
     </section>
   );
 };

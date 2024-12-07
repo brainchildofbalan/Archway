@@ -10,10 +10,12 @@ import HomeReviews from "./ui/HomeReviews";
 import HomeFaq from "./ui/HomeFaq";
 import HomeBlog from "./ui/HomeBlog";
 import HomeFollow from "./ui/HomeFollow";
+import MovingAnimCard from "@/components/MovingAnimCard";
 
 const homePage = () => {
   return (
     <main>
+     
       <HomeBanner/>
       <HomeIntro/>
       <HomeAbout/>
